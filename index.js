@@ -11,18 +11,6 @@ const port = process.env.PORT;
 const router = require("./router");
 const { add_user, get_user, remove_user, get_room_users } = require("./users");
 
-const keepServerAwake = () => {
-  const serverUrl = `https://sudan.onrender.com:${port}`; 
-  setInterval(async () => {
-    try {
-      console.log(`keep the server awake ${serverUrl}`);
-      await axios.get(serverUrl);
-    } catch (error) {
-      console.error('Error while keeping the srever awake!', error.message);
-    }
-  }, 5 * 60 * 1000);
-};
-
 app.get('/', (req, res) => {
   res.send("Server is up and running :)")
 })
