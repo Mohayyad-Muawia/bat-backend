@@ -22,7 +22,7 @@ app.use(router);
 
 const io = socketio(server, {
     cors: {
-        origin: "",
+        origin: "*",
         methods: ["GET", "POST"], 
     },
 });
